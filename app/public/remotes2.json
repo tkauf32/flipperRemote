@@ -1,0 +1,51 @@
+{
+    "Fan": {
+        "FanPower": "subghz tx_from_file /ext/Room/Fan/FanPower.sub",
+        "LightPower": "subghz tx_from_file /ext/Room/Fan/LightPower.sub",
+        "Medium": "subghz tx_from_file /ext/Room/Fan/Medium.sub",
+        "High": "subghz tx_from_file /ext/Room/Fan/High.sub",
+        "Low": "subghz tx_from_file /ext/Room/Fan/Low.sub"
+    },
+    "OutletPlugs": {
+        "1_ON": "subghz tx_from_file /ext/Room/OutletPlugs/1_ON.sub",
+        "1_OFF": "subghz tx_from_file /ext/Room/OutletPlugs/1_OFF.sub",
+        "2_ON": "subghz tx_from_file /ext/Room/OutletPlugs/2_ON.sub",
+        "2_OFF": "subghz tx_from_file /ext/Room/OutletPlugs/2_OFF.sub",
+        "3_ON": "subghz tx_from_file /ext/Room/OutletPlugs/3_ON.sub",
+        "3_OFF": "subghz tx_from_file /ext/Room/OutletPlugs/3_OFF.sub",
+        "4_ON": "subghz tx_from_file /ext/Room/OutletPlugs/4_ON.sub",
+        "4_OFF": "subghz tx_from_file /ext/Room/OutletPlugs/4_OFF.sub",
+        "5_ON": "subghz tx_from_file /ext/Room/OutletPlugs/5_ON.sub",
+        "5_OFF": "subghz tx_from_file /ext/Room/OutletPlugs/5_OFF.sub"
+    },
+    "ProjectorScreen": {
+        "Up": "subghz tx_from_file /ext/Room/ProjectorScreen/Up.sub",
+        "Pause": "subghz tx_from_file /ext/Room/ProjectorScreen/Pause.sub",
+        "Down": "subghz tx_from_file /ext/Room/ProjectorScreen/Down.sub"
+    },
+    "Projector": {
+        "PowerOn": "ir tx NEC 2 14",
+        "PowerOff": ["ir tx NEC 2 14", "ir tx NEC 2 14"],
+        "Screen": "ir tx NEC 2 0C",
+        "Flip": "ir tx NEC 2 0F",
+        "Sources": "ir tx NEC 2 0D",
+        "Up": "ir tx NEC 2 12",
+        "Left": "ir tx NEC 2 11",
+        "OK": "ir tx NEC 2 15",
+        "Right": "ir tx NEC 2 10",
+        "Down": "ir tx NEC 2 13",
+        "Menu": "ir tx NEC 2 16",
+        "Home": "ir tx NEC 2 1B",
+        "Return": "ir tx NEC 2 1A",
+        "VolumeDown": "ir tx NEC 2 40",
+        "Mute": "ir tx NEC 2 18",
+        "VolumeUp": "ir tx NEC 2 48"
+    },
+    "Groups": {
+        "MoodLighting": ["Room/Fan/LightPower", "Room/OutletPlugs/Plug1_ON"],
+        "WorkLighting": ["Room/Fan/LightPower", "Room/OutletPlugs/Plug2_ON"]
+    },
+    "Macros": {
+        "ProjectorBluetoothReconnect": ["cmd1","cmd2","cdm(n)"]
+    }
+}

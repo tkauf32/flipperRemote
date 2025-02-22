@@ -1,33 +1,55 @@
-document.addEventListener('DOMContentLoaded', function () {
-    const socket = io(); // Connect to the serve
+const socket = io(); // Connect to the server
+
+document.addEventListener('DOMContentLoaded', async function () {
     
-    // Projector Buttons
-    const upButton = document.getElementById('Up');
-    const pauseButton = document.getElementById('Pause');
-    const downButton = document.getElementById('Down');
+    const buttons = document.querySelectorAll('.remote-button');
 
-    // Fan buttons
-    const fanPower = document.getElementById('FanPower');
-    const lightPowerButton = document.getElementById('LightPower');
-    const fanMedium = document.getElementById('Medium');
-    const fanHigh = document.getElementById('High');
-    const fanLow = document.getElementById('Low');
+    const buttonsContainer = document.getElementById('buttons-container');
 
-    // OutletPlugs buttons
-    const plug1On = document.getElementById('Plug1_ON');
-    const plug1Off = document.getElementById('Plug1_OFF');
-    const plug2On = document.getElementById('Plug2_ON');
-    const plug2Off = document.getElementById('Plug2_OFF');
-    const plug3On = document.getElementById('Plug3_ON');
-    const plug3Off = document.getElementById('Plug3_OFF');
-    const plug4On = document.getElementById('Plug4_ON');
-    const plug4Off = document.getElementById('Plug4_OFF');
-    const plug5On = document.getElementById('Plug5_ON');
-    const plug5Off = document.getElementById('Plug5_OFF');
+    try {
+        const response = await fetch('remotes2.json');
+        const config = await response.json();
 
-    function executeCommand(button) {
-        console.log(`%s ButtonPressed. Executing ws`, button);
-        socket.emit('ButtonPressed', button);
+        for (const category in config) {
+            if (category === "Groups" || category === "Macros") continue; // skip special groups
+            
+            const section = document.createElement('div');
+            section.innerHTML = `<h2>${category.replace(/([A-Z])/g, ' $1')}</h2>`;
+            for (const buttonName in config[category]) {
+                const button = document.createElement('button');
+                button.classList.add('remote-button');
+                button.dataset.command = buttonName;
+                button.textContent = buttonName.replace(/([A-Z])/g, ' $1'); // Format button name
+                button.addEventListener('click', () => {
+                    console.log(`Button pressed: ${buttonName}`);
+                    socket.emit('ButtonPressed', buttonName);
+                });
+                section.appendChild(button);
+            }
+
+            buttonsContainer.appendChild(section);
+        }
+        
+        // Add group buttons
+        if (config.Groups) {
+            const groupSection = document.createElement('div');
+            groupSection.innerHTML = `<h2>Groups</h2>`;
+            
+            for (const groupName in config.Groups) {
+                const button = document.createElement('button');
+                button.classList.add('remote-button');
+                button.dataset.command = groupName;
+                button.textContent = groupName.replace(/([A-Z])/g, ' $1');
+                button.addEventListener('click', () => {
+                    console.log(`Group button pressed: ${groupName}`);
+                    socket.emit('ButtonPressed', groupName);
+                });
+                groupSection.appendChild(button);
+            }
+            buttonsContainer.appendChild(groupSection);
+        }
+    } catch (error) {
+        console.error('Error loading config:', error);
     }
 
     socket.on('error', error => {
@@ -38,25 +60,4 @@ document.addEventListener('DOMContentLoaded', function () {
         console.log('Command Output: ', data);
     })
 
-    upButton.onclick = () => executeCommand("Up");
-    pauseButton.onclick = () => executeCommand("Pause");
-    downButton.onclick = () => executeCommand("Down");
-
-    lightPowerButton.onclick = () => executeCommand("LightPower");
-    fanPower.onclick = () => executeCommand("FanPower");
-    fanHigh.onclick = () => executeCommand("High");
-    fanMedium.onclick = () => executeCommand("Medium");
-    fanLow.onclick = () => executeCommand("Low");
-  
-    // Attach event listeners to OutletPlugs buttons
-    plug1On.onclick = () => executeCommand("Plug1_ON");
-    plug1Off.onclick = () => executeCommand("Plug1_OFF");
-    plug2On.onclick = () => executeCommand("Plug2_ON");
-    plug2Off.onclick = () => executeCommand("Plug2_OFF");
-    plug3On.onclick = () => executeCommand("Plug3_ON");
-    plug3Off.onclick = () => executeCommand("Plug3_OFF");
-    plug4On.onclick = () => executeCommand("Plug4_ON");
-    plug4Off.onclick = () => executeCommand("Plug4_OFF");
-    plug5On.onclick = () => executeCommand("Plug5_ON");
-    plug5Off.onclick = () => executeCommand("Plug5_OFF");
 });

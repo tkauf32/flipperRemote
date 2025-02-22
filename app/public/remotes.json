@@ -1,0 +1,50 @@
+{
+    "subghz": {
+        "Room": {
+            "Fan": {
+                "FanPower": "/ext/Room/Fan/FanPower.sub",
+                "LightPower": "/ext/Room/Fan/LightPower.sub",
+                "Medium": "/ext/Room/Fan/Medium.sub",
+                "High": "/ext/Room/Fan/High.sub",
+                "Low": "/ext/Room/Fan/Low.sub"
+            },
+            "OutletPlugs": {
+                "Plug1_ON": "/ext/Room/OutletPlugs/Plug1_ON.sub",
+                "Plug1_OFF": "/ext/Room/OutletPlugs/Plug1_OFF.sub",
+                "Plug2_ON": "/ext/Room/OutletPlugs/Plug2_ON.sub",
+                "Plug2_OFF": "/ext/Room/OutletPlugs/Plug2_OFF.sub"
+            },
+            "ProjectorScreen": {
+                "Up": "/ext/Room/ProjectorScreen/Up.sub",
+                "Pause": "/ext/Room/ProjectorScreen/Pause.sub",
+                "Down": "/ext/Room/ProjectorScreen/Down.sub"
+            }
+        }
+    },
+    "ir": {
+        "Room": {
+            "Projector": {
+                "PowerOn": "ir tx NEC 2 14",
+                "PowerOff": ["ir tx NEC 2 14", "ir tx NEC 2 14"],
+                "Screen": "ir tx NEC 2 0C",
+                "Flip": "ir tx NEC 2 0F",
+                "Sources": "ir tx NEC 2 0D",
+                "Up": "ir tx NEC 2 12",
+                "Left": "ir tx NEC 2 11",
+                "OK": "ir tx NEC 2 15",
+                "Right": "ir tx NEC 2 10",
+                "Down": "ir tx NEC 2 13",
+                "Menu": "ir tx NEC 2 16",
+                "Home": "ir tx NEC 2 1B",
+                "Return": "ir tx NEC 2 1A",
+                "VolumeDown": "ir tx NEC 2 40",
+                "Mute": "ir tx NEC 2 18",
+                "VolumeUp": "ir tx NEC 2 48"
+            }
+        }
+    },
+    "Groups": {
+        "MoodLighting": ["Room/Fan/LightPower", "Room/OutletPlugs/Plug1_ON"],
+        "WorkLighting": ["Room/Fan/LightPower", "Room/OutletPlugs/Plug2_ON"]
+    }
+}

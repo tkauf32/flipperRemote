@@ -1,48 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Flipper Remote</title>
-        <style>
-            .group { margin-bottom: 1em; }
-            button { margin: 0 0.5em; }
-        </style>
-        <link rel="stylesheet" href="style/styles.css">
-        <script src="/socket.io/socket.io.js"></script>
-    </head>
-    <body>
-        <div id="ProjectorScreen" class="group">
-            <h3>Projector Screen</h3>
-            <button id="Up">Up</button>
-            <button id="Pause">Pause</button>
-            <button id="Down">Down</button>
-          </div>
-        <div id="Fan" class="group">
-            <h3>Fan</h3>
-            <button id="FanPower">FanPower</button>
-            <button id="LightPower">LightPower</button>
-            <button id="Medium">Medium</button>
-            <button id="High">High</button>
-            <button id="Low">Low</button>
-          </div>        
-        <div id="OutletPlugs" class="group">
-            <h3>Outlet Plugs</h3>
-            <button id="Plug1_ON">Plug 1 ON</button>
-            <button id="Plug1_OFF">Plug 1 OFF</button>
-            <button id="Plug2_ON">Plug 2 ON</button>
-            <button id="Plug2_OFF">Plug 2 OFF</button>
-            <button id="Plug3_ON">Plug 3 ON</button>
-            <button id="Plug3_OFF">Plug 3 OFF</button>
-            <button id="Plug4_ON">Plug 4 ON</button>
-            <button id="Plug4_OFF">Plug 4 OFF</button>
-            <button id="Plug5_ON">Plug 5 ON</button>
-            <button id="Plug5_OFF">Plug 5 OFF</button>
-          </div>
-        <div>
-            <iframe id="iframe" src="http://192.168.4.73:8080/?action=stream"></iframe>
-        </div>
-    </body>
-    <script src="script.js"></script>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flipper Remote</title>
+    <script defer src="/socket.io/socket.io.js"></script>
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <h1>Flipper Remote Control</h1>
+
+    <div id="buttons-container">
+        <!-- Buttons will be inserted dynamically -->
+    </div>
+</body>
 </html>
