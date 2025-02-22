@@ -1,0 +1,164 @@
+[Central Power Button]
+
+subghz rx 303941000 0
+Load_keystore keeloq_mfcodes OK
+Load_keystore keeloq_mfcodes_user Absent
+Listening at frequency: 303940856 device: 0. Press CTRL+C to stop
+CAME 12bit
+Key:0x000007BD
+Yek:0x00000BDE
+CAME 12bit
+Key:0x000007BD
+Yek:0x00000BDE
+Holtek_HT12X 12b
+Key:0x7BD
+Btn: B3 
+DIP:10000100
+Te:352us
+Holtek_HT12X 12b
+Key:0x7BD
+Btn: B3 
+DIP:10000100
+Te:352us
+Holtek_HT12X 12b
+Key:0x7BD
+Btn: B3 
+DIP:10000100
+Te:353us
+Holtek_HT12X 12b
+Key:0x7BD
+Btn: B3 
+DIP:10000100
+Te:352us
+Holtek_HT12X 12b
+Key:0x7BD
+Btn: B3 
+DIP:10000100
+Te:352us
+CAME 12bit
+Key:0x000007BF
+Yek:0x00000FDE
+Holtek_HT12X 12b
+Key:0x7BF
+Btn: 
+DIP:10000100
+Te:351us
+
+
+[LOW]
+
+CAME 12bit
+Key:0x000007B7
+Yek:0x00000EDE
+CAME 12bit
+Key:0x000007B7
+Yek:0x00000EDE
+Holtek_HT12X 12b
+Key:0x7B7
+Btn: B1 
+DIP:10000100
+Te:353us
+Holtek_HT12X 12b
+Key:0x7B7
+Btn: B1 
+DIP:10000100
+Te:352us
+CAME 12bit
+Key:0x000007BF
+Yek:0x00000FDE
+
+
+[MEDIUM]
+
+CAME 12bit
+Key:0x000007AF
+Yek:0x00000F5E
+CAME 12bit
+Key:0x000007AF
+Yek:0x00000F5E
+CAME 12bit
+Key:0x000007BF
+Yek:0x00000FDE
+Holtek_HT12X 12b
+Key:0x7BF
+Btn: 
+DIP:10000100
+Te:350us
+Holtek_HT12X 12b
+Key:0x7BF
+Btn: 
+DIP:10000100
+Te:351us
+
+
+
+[HIGH]
+
+CAME 12bit
+Key:0x0000079F
+Yek:0x00000F9E
+CAME 12bit
+Key:0x0000079F
+Yek:0x00000F9E
+Holtek_HT12X 12b
+Key:0x79F
+Btn: 
+DIP:10000110
+Te:351us
+Holtek_HT12X 12b
+Key:0x79F
+Btn: 
+DIP:10000110
+Te:352us
+CAME 12bit
+Key:0x000007BF
+Yek:0x00000FDE
+
+[LIGHT]
+
+CAME 12bit
+Key:0x000007BE
+Yek:0x000007DE
+Holtek_HT12X 12b
+Key:0x7BE
+Btn: B4 
+DIP:10000100
+Te:352us
+Holtek_HT12X 12b
+Key:0x7BE
+Btn: B4 
+DIP:10000100
+Te:352us
+Holtek_HT12X 12b
+Key:0x7BE
+Btn: B4 
+DIP:10000100
+Te:353us
+Holtek_HT12X 12b
+Key:0x7BE
+Btn: B4 
+DIP:10000100
+Te:353us
+Holtek_HT12X 12b
+Key:0x7BE
+Btn: B4 
+DIP:10000100
+Te:352us
+Holtek_HT12X 12b
+Key:0x7BE
+Btn: B4 
+DIP:10000100
+Te:352us
+Holtek_HT12X 12b
+Key:0x7BE
+Btn: B4 
+DIP:10000100
+Te:352us
+CAME 12bit
+Key:0x000007BF
+Yek:0x00000FDE
+Holtek_HT12X 12b
+Key:0x7BF
+Btn: 
+DIP:10000100
+Te:351us

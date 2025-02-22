@@ -1,0 +1,69 @@
+1 ON
+Princeton 24bit
+Key:0x00471D4C
+Yek:0x0032B8E2
+Sn:0x471D4 Btn:C (4b)
+Te:200us  GT:Te*31
+
+1 OFF
+Princeton 24bit
+Key:0x00471D44
+Yek:0x0022B8E2
+Sn:0x471D4 Btn:4 (4b)
+Te:199us  GT:Te*31
+
+2 ON
+Princeton 24bit
+Key:0x00471D4A
+Yek:0x0052B8E2
+Sn:0x471D4 Btn:A (4b)
+Te:199us  GT:Te*31
+
+2 OFF
+Princeton 24bit
+Key:0x00471D42
+Yek:0x0042B8E2
+Sn:0x471D4 Btn:2 (4b)
+Te:199us  GT:Te*31
+
+3 ON 
+Princeton 24bit
+Key:0x00471D49
+Yek:0x0092B8E2
+Sn:0x471D4 Btn:9 (4b)
+Te:199us  GT:Te*31
+
+3 OFF
+Princeton 24bit
+Key:0x00471D41
+Yek:0x0082B8E2
+Sn:0x471D4 Btn:1 (4b)
+Te:199us  GT:Te*31
+
+4 ON 
+Princeton 24bit
+Key:0x00471D4D
+Yek:0x00B2B8E2
+Sn:0x471D4 Btn:D (4b)
+Te:199us  GT:Te*31
+
+4 OFF
+Princeton 24bit
+Key:0x00471D45
+Yek:0x00A2B8E2
+Sn:0x471D4 Btn:5 (4b)
+Te:199us  GT:Te*31
+
+5 ON
+Princeton 24bit
+Key:0x00471D4B
+Yek:0x00D2B8E2
+Sn:0x471D4 Btn:B (4b)
+Te:199us  GT:Te*31
+
+5 OFF
+Princeton 24bit
+Key:0x00471D43
+Yek:0x00C2B8E2
+Sn:0x471D4 Btn:3 (4b)
+Te:199us  GT:Te*31

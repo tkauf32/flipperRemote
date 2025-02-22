@@ -1,0 +1,5 @@
+subghz tx_from_file /ext/Room/Fan/FanPower.sub
+subghz tx_from_file /ext/Room/Fan/High.sub
+subghz tx_from_file /ext/Room/Fan/Medium.sub
+subghz tx_from_file /ext/Room/Fan/Low.sub
+subghz tx_from_file /ext/Room/Fan/LightPower.sub
