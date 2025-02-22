@@ -1,3 +1,0 @@
-subghz tx_from_file /ext/Room/ProjectorScreen/Down.sub
-subghz tx_from_file /ext/Room/ProjectorScreen/Pause.sub
-subghz tx_from_file /ext/Room/ProjectorScreen/Up.sub
