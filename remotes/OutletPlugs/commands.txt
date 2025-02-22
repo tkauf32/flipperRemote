@@ -1,0 +1,12 @@
+subghz tx_from_file /ext/Room/OutletPlugs/1_ON.sub
+subghz tx_from_file /ext/Room/OutletPlugs/1_OFF.sub
+subghz tx_from_file /ext/Room/OutletPlugs/2_ON.sub
+subghz tx_from_file /ext/Room/OutletPlugs/2_OFF.sub
+subghz tx_from_file /ext/Room/OutletPlugs/3_OFF.sub
+subghz tx_from_file /ext/Room/OutletPlugs/3_ON.sub
+subghz tx_from_file /ext/Room/OutletPlugs/4_OFF.sub
+subghz tx_from_file /ext/Room/OutletPlugs/4_ON.sub
+subghz tx_from_file /ext/Room/OutletPlugs/5_OFF.sub
+subghz tx_from_file /ext/Room/OutletPlugs/5_ON.sub
+
+subghz rx 433920000 0

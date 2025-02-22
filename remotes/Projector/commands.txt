@@ -1,0 +1,90 @@
+[POWER ON]
+ir tx NEC 2 14
+
+[POWER OFF]
+ir tx NEC 2 14
+ir tx NEC 2 14
+
+[Screen]
+ir tx NEC 2 0C
+
+[Flip]
+ir tx NEC 2 0F
+
+[Sources]
+ir tx NEC 2 0D
+
+[Up]
+ir tx NEC 2 12
+
+[Left]
+ir tx NEC 2 11
+
+[OK]
+ir tx NEC 2 15
+
+[Right]
+ir tx NEC 2 10
+
+[Down]
+ir tx NEC 2 13
+
+[Menu]
+ir tx NEC 2 16
+
+[Home]
+ir tx NEC 2 1B
+
+[Return]
+ir tx NEC 2 1A
+
+[Volume Down]
+ir tx NEC 2 40
+
+[Mute]
+ir tx NEC 2 18
+
+[Volume Up]
+ir tx NEC 2 48
+
+
+
+[Reconnect Bluetooth]
+Menu        [16]
+Right x 2   [10]
+Down x 4    [13]
+OK          [15]
+Down        [13]
+OK          [15]
+OK          [15]
+Menu        [16]
+Menu        [16]
+Menu        [16]
+
+ir tx NEC 2 16
+
+ir tx NEC 2 10
+
+ir tx NEC 2 10
+
+ir tx NEC 2 13
+
+ir tx NEC 2 13
+
+ir tx NEC 2 13
+
+ir tx NEC 2 13
+
+ir tx NEC 2 15
+
+ir tx NEC 2 13
+
+ir tx NEC 2 15
+
+ir tx NEC 2 15
+
+ir tx NEC 2 16
+
+ir tx NEC 2 16
+
+ir tx NEC 2 16
