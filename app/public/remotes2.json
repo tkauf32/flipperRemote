@@ -56,14 +56,8 @@
         "Warmer": "ir tx NEC 80 3",
         "Colder": "ir tx NEC 80 2"
     },
-    "subghz rx": {
-        "rx": "subghz rx"
-    }, 
-    "exit": {
-        "exit": "\u0003"
-    }, 
     "Groups": {
-        "MoodLighting": ["Room/Fan/LightPower", "Room/OutletPlugs/Plug1_ON"],
+        "Lights Off": ["subghz tx_from_file /ext/Room/OutletPlugs/1_OFF.sub","subghz tx_from_file /ext/Room/OutletPlugs/2_OFF.sub","subghz tx_from_file /ext/Room/OutletPlugs/3_OFF.sub","subghz tx_from_file /ext/Room/OutletPlugs/4_OFF.sub","subghz tx_from_file /ext/Room/OutletPlugs/5_OFF.sub"],
         "WorkLighting": ["Room/Fan/LightPower", "Room/OutletPlugs/Plug2_ON"]
     },
     "Macros": {
