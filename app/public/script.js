@@ -2,8 +2,6 @@ const socket = io(); // Connect to the server
 
 document.addEventListener('DOMContentLoaded', async function () {
     
-    const buttons = document.querySelectorAll('.remote-button');
-
     const buttonsContainer = document.getElementById('buttons-container');
 
     try {

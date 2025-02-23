@@ -1,45 +1,62 @@
-/* style.css */
-html, body {
-    /* height: 100%; */
-    height: 100vh;
-    margin: 0;
-    padding: 0;
+/* Global Styles */
+body {
+    background-color: #121212;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Headings */
+h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin-top: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Buttons Container */
+#buttons-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    background-color: #0D0D0D;
-    color: #FFFFFF;
+    gap: 15px;
 }
 
-
-button {
-    padding: 20px 40px;
-    margin-top: 20px;
-    font-size: 1.2em;
-    cursor: pointer;
+/* Button Group Styling */
+.button-group {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 600px;
 }
 
-#upButton {
-    position: absolute;
-    left: 50%;
-    bottom: 12.5%;  /* Places the button 12.5% above the bottom edge */
-    transform: translate(-50%, 50%); /* Offsets the button so its center is at that point */
-    
-    /* Base styling for the button */
-    color: white; /* Text fille color */
-    -webkit-text-stroke: rgba(169, 169, 169, 0.3);/* Text stroke: 1px thick black border */
-    padding: 40px 20px;
-    font-size: 2.5em;
+/* Remote Buttons */
+.remote-button {
+    background: linear-gradient(135deg, #ff8c00, #ff4500);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    margin: 8px;
+    font-size: 1rem;
     font-weight: bold;
+    border-radius: 8px;
     cursor: pointer;
-    border: 2px solid rgba(169, 169, 169, 0.3);
-    border-radius: 120px;
-    background-color: rgba(169, 169, 169, 0.6);
+    transition: all 0.3s ease;
+    display: inline-block;
+    min-width: 120px;
+    box-shadow: 0 4px 6px rgba(255, 140, 0, 0.3);
+}
 
-    /* Brings button to above iframe */
-    z-index: 1;
-    
-    /* Smooth transition for the active effect */
-    transition: transform 0.1s ease, background-color 0.1s ease;
+/* Hover Effect */
+.remote-button:hover {
+    background: linear-gradient(135deg, #ff4500, #ff8c00);
+    box-shadow: 0 6px 12px rgba(255, 140, 0, 0.5);
+    transform: scale(1.05);
 }
