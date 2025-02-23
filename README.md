@@ -1,6 +1,36 @@
 ## Running
 node app.js
 
+Create a systemd service file:
+```bash
+sudo nano /etc/systemd/system/flipperremote.service 
+```
+
+```bash
+[Unit]
+Description=Flipper Remote Node.js App
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/node /home/tommy/flipperRemote/app/app.js
+WorkingDirectory=/home/pi/flipperRemote/app
+Restart=always
+User=pi
+Environment=NODE_ENV=production
+
+[Install]
+WantedBy=multi-user.target
+
+```
+
+Enable and start the service:
+```bash
+sudo systemctl daemon-reload
+sudo systemctl enable flipperremote
+sudo systemctl start flipperremote
+sudo systemctl status flipperremote
+```
+
 ## Feature list
 - button learning feature where you can create new buttons off of sequential button clicks"
     - show the list of commands

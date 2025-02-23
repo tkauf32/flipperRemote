@@ -11,8 +11,8 @@ const FlipperSerialManager = require('./flipperSerialManager');
 const { SerialPort, SerialPortMock } = require('serialport');
 const port = 3000;
 
-// const serialPortPath = '/dev/ttyACM0';
-const serialPortPath = '/dev/tty.usbmodemflip_Munati1';
+const serialPortPath = '/dev/ttyACM0';
+// const serialPortPath = '/dev/tty.usbmodemflip_Munati1';
 const flipper = new FlipperSerialManager(serialPortPath);
 
 const configPath = path.join(__dirname, 'public/remotes2.json');
