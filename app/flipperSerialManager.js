@@ -14,6 +14,15 @@ class FlipperSerialManager {
     this.promptString = '>: ';   // Adjust to the Flipper CLI’s actual prompt or marker
   }
 
+  reconnectSerialPort() {
+    console.log('Reconnecting Serial Port');
+    try {
+      console.log(`Trying to reconnect to Serial Port: ${serialPortPath}`);
+    } catch (err) {
+      console.error("Error reconnecting to the serial port", err.message);
+    }
+  }
+
   /**
    * Initialize the serial port and attach listeners.
    */

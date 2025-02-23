@@ -45,22 +45,22 @@ server.listen(port, () =>  {console.log(`Server is running on port ${port}`);});
 flipper.init();
 flipper.openPort();
 
-function getCommand(button) {
-  for (const category in config) {
-    if (config[category][button]) {
-      return config[category][button];
-    }
+function getCommand(remote, command) {
+  // If `remote` exists in config and that remote has a key for `command`
+  if (config[remote] && config[remote][command]) {
+    return config[remote][command];
   }
   return null;
 }
+
 
 // Socket.IO
 io.on('connection', (socket) => {
     console.log('New WebSocket client connected.');
   
     // Listen for "ButtonPressed" events from the client
-    socket.on('ButtonPressed', async (button) => {
-      console.log(`Received button press: ${button}`);
+    socket.on('ButtonPressed', async ({remote, command}) => {
+      console.log(`Received button press: ${remote} -> ${command}`);
   
       // If serial not connected, notify client
       if (!flipper.isOpen) {
@@ -68,31 +68,28 @@ io.on('connection', (socket) => {
         return;
       }
   
-      let command = getCommand(button);
-
-      if (!command) {
-        socket.emit('error', `Command not found for that button!`);
+      const cmd = getCommand(remote, command);
+      if (!cmd) {
+        socket.emit('error', `Command not found for ${remote} -> ${command}`);
         return;
       }
 
-      try { 
-        if (Array.isArray(command)) {
-          for (let i = 0; i < command.length; i++) {
-            const cmd = command[i];
-            console.log(`Executing array command #[${i}]: ${cmd}`);
-            await flipper.sendCommand(cmd);
-          }
+      try {
+        if (Array.isArray(cmd)) {
+            for (let i = 0; i < cmd.length; i++) {
+                console.log(`Executing ${remote} command [${command} #${i}]: ${cmd[i]}`);
+                await flipper.sendCommand(cmd[i]);
+            }
         } else {
-          await flipper.sendCommand(command);
-          console.log(`Executed commmand: ${command}`);
+            console.log(`Executing ${remote} command ${command}: ${cmd}`);
+            await flipper.sendCommand(cmd);
         }
-        socket.emit('commandOutput', command);
-      } catch (err) {
+        socket.emit('commandOutput', `${remote} -> ${command}`);
+    } catch (err) {
         console.error('Error executing command:', err.message);
         socket.emit('error', 'Failed to execute command.');
-      }
-
-    });
+    }
+});
 
     socket.on('disconnect', () => {
       console.log('WebSocket client disconnected.');

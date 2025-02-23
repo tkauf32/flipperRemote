@@ -10,19 +10,22 @@ document.addEventListener('DOMContentLoaded', async function () {
         const response = await fetch('remotes2.json');
         const config = await response.json();
 
-        for (const category in config) {
-            if (category === "Groups" || category === "Macros") continue; // skip special groups
+        for (const remote in config) {
+            if (remote === "Groups" || remote === "Macros") continue; // skip special groups
             
             const section = document.createElement('div');
-            section.innerHTML = `<h2>${category.replace(/([A-Z])/g, ' $1')}</h2>`;
-            for (const buttonName in config[category]) {
+            section.innerHTML = `<h2>${remote}</h2>`;
+
+            for (const command in config[remote]) {
                 const button = document.createElement('button');
                 button.classList.add('remote-button');
-                button.dataset.command = buttonName;
-                button.textContent = buttonName.replace(/([A-Z])/g, ' $1'); // Format button name
+                button.dataset.remote = remote;
+                button.dataset.command = command;
+                button.textContent = command.replace(/([A-Z])/g, ' $1'); // Format button name
+                
                 button.addEventListener('click', () => {
-                    console.log(`Button pressed: ${buttonName}`);
-                    socket.emit('ButtonPressed', buttonName);
+                    console.log(`Button pressed: ${remote} -> ${command}`);
+                    socket.emit('ButtonPressed', {remote, command});
                 });
                 section.appendChild(button);
             }
@@ -38,11 +41,13 @@ document.addEventListener('DOMContentLoaded', async function () {
             for (const groupName in config.Groups) {
                 const button = document.createElement('button');
                 button.classList.add('remote-button');
+
+                button.dataset.remote = 'Groups';
                 button.dataset.command = groupName;
                 button.textContent = groupName.replace(/([A-Z])/g, ' $1');
                 button.addEventListener('click', () => {
                     console.log(`Group button pressed: ${groupName}`);
-                    socket.emit('ButtonPressed', groupName);
+                    socket.emit('ButtonPressed', { remote: 'Groups', command: groupName });
                 });
                 groupSection.appendChild(button);
             }
