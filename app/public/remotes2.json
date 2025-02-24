@@ -61,7 +61,8 @@
     },
     "Groups": {
         "Lights Off": ["subghz tx_from_file /ext/Room/OutletPlugs/1_OFF.sub","subghz tx_from_file /ext/Room/OutletPlugs/2_OFF.sub","subghz tx_from_file /ext/Room/OutletPlugs/3_OFF.sub","subghz tx_from_file /ext/Room/OutletPlugs/4_OFF.sub","subghz tx_from_file /ext/Room/OutletPlugs/5_OFF.sub"],
-        "WorkLighting": ["Room/Fan/LightPower", "Room/OutletPlugs/Plug2_ON"]
+        "ProjectorOn": ["ir tx NEC 2 14", "subghz tx_from_file /ext/Room/ProjectorScreen/Down.sub", "ir tx Samsung32 7 2"],
+        "ProjectorOff": ["ir tx NEC 2 14", "subghz tx_from_file /ext/Room/ProjectorScreen/Up.sub", "ir tx NEC 2 14"]
     },
     "Macros": {
         "ProjectorBluetoothReconnect": ["cmd1","cmd2","cdm(n)"]
