@@ -42,19 +42,22 @@
         "VolumeUp": "ir tx NEC 2 48"
     },
     "Fireplace": {
-        "PowerOn": "ir tx NEC 80 58",
+        "Power": "ir tx NEC 80 58",
         "Color": "ir tx NEC 80 8",
         "Timer": "ir tx NEC 80 A0",
         "Temp": "ir tx NEC 80 48",
         "Brightness": "ir tx NEC 80 7"
     },
     "Keylight": {
-        "PowerOn": "ir tx NEC 80 01",
+        "Power": "ir tx NEC 80 01",
         "Brightness (-)": "ir tx NEC 80 1E",
         "Brightness (+)": "ir tx NEC 80 12",
         "Mode Change": "ir tx NEC 80 6",
         "Warmer": "ir tx NEC 80 3",
         "Colder": "ir tx NEC 80 2"
+    },
+    "Chromecast": {
+        "Power": "ir tx Samsung32 7 2"
     },
     "Groups": {
         "Lights Off": ["subghz tx_from_file /ext/Room/OutletPlugs/1_OFF.sub","subghz tx_from_file /ext/Room/OutletPlugs/2_OFF.sub","subghz tx_from_file /ext/Room/OutletPlugs/3_OFF.sub","subghz tx_from_file /ext/Room/OutletPlugs/4_OFF.sub","subghz tx_from_file /ext/Room/OutletPlugs/5_OFF.sub"],
