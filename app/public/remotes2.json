@@ -59,6 +59,11 @@
     "Chromecast": {
         "Power": "ir tx Samsung32 7 2"
     },
+    "HDMI": {
+        "Cast (1)": "ir tx NEC 80 2",
+        "PS4  (2)": "ir tx NEC 80 4",
+        "N/A  (3)": "ir tx NEC 80 6"
+    },
     "Groups": {
         "Lights Off": ["subghz tx_from_file /ext/Room/OutletPlugs/1_OFF.sub","subghz tx_from_file /ext/Room/OutletPlugs/2_OFF.sub","subghz tx_from_file /ext/Room/OutletPlugs/3_OFF.sub","subghz tx_from_file /ext/Room/OutletPlugs/4_OFF.sub","subghz tx_from_file /ext/Room/OutletPlugs/5_OFF.sub"],
         "ProjectorOn": ["ir tx NEC 2 14", "subghz tx_from_file /ext/Room/ProjectorScreen/Down.sub", "ir tx Samsung32 7 2"],
