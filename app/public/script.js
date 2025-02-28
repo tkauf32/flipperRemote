@@ -8,6 +8,28 @@ document.addEventListener('DOMContentLoaded', async function () {
         const response = await fetch('remotes2.json');
         const config = await response.json();
 
+
+        // Add group buttons
+        if (config.Groups) {
+            const groupSection = document.createElement('div');
+            groupSection.innerHTML = `<h2>Groups</h2>`;
+            
+            for (const groupName in config.Groups) {
+                const button = document.createElement('button');
+                button.classList.add('remote-button');
+
+                button.dataset.remote = 'Groups';
+                button.dataset.command = groupName;
+                button.textContent = groupName.replace(/([A-Z])/g, ' $1');
+                button.addEventListener('click', () => {
+                    console.log(`Group button pressed: ${groupName}`);
+                    socket.emit('ButtonPressed', { remote: 'Groups', command: groupName });
+                });
+                groupSection.appendChild(button);
+            }
+            buttonsContainer.appendChild(groupSection);
+        }
+
         for (const remote in config) {
             if (remote === "Groups" || remote === "Macros") continue; // skip special groups
             
@@ -31,26 +53,6 @@ document.addEventListener('DOMContentLoaded', async function () {
             buttonsContainer.appendChild(section);
         }
         
-        // Add group buttons
-        if (config.Groups) {
-            const groupSection = document.createElement('div');
-            groupSection.innerHTML = `<h2>Groups</h2>`;
-            
-            for (const groupName in config.Groups) {
-                const button = document.createElement('button');
-                button.classList.add('remote-button');
-
-                button.dataset.remote = 'Groups';
-                button.dataset.command = groupName;
-                button.textContent = groupName.replace(/([A-Z])/g, ' $1');
-                button.addEventListener('click', () => {
-                    console.log(`Group button pressed: ${groupName}`);
-                    socket.emit('ButtonPressed', { remote: 'Groups', command: groupName });
-                });
-                groupSection.appendChild(button);
-            }
-            buttonsContainer.appendChild(groupSection);
-        }
     } catch (error) {
         console.error('Error loading config:', error);
     }
