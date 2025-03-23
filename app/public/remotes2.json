@@ -1,7 +1,7 @@
 {
     "Groups": {
         "Lights Off": ["subghz tx_from_file /ext/Room/OutletPlugs/1_OFF.sub","subghz tx_from_file /ext/Room/OutletPlugs/2_OFF.sub","subghz tx_from_file /ext/Room/OutletPlugs/3_OFF.sub","subghz tx_from_file /ext/Room/OutletPlugs/4_OFF.sub","subghz tx_from_file /ext/Room/OutletPlugs/5_OFF.sub"],
-        "Lights On": ["subghz tx_from_file /ext/Room/OutletPlugs/1_ON.sub","subghz tx_from_file /ext/Room/OutletPlugs/2_ON.sub","subghz tx_from_file /ext/Room/OutletPlugs/3_ON.sub"],
+        "Lights On": ["subghz tx_from_file /ext/Room/OutletPlugs/1_ON.sub","subghz tx_from_file /ext/Room/OutletPlugs/2_ON.sub","subghz tx_from_file /ext/Room/OutletPlugs/3_ON.sub", "subghz tx_from_file /ext/Room/OutletPlugs/5_ON.sub"],
         "ProjectorOn": ["ir tx NEC 2 14", "subghz tx_from_file /ext/Room/ProjectorScreen/Down.sub", "ir tx Samsung32 7 2"],
         "ProjectorOff": ["ir tx NEC 2 14", "subghz tx_from_file /ext/Room/ProjectorScreen/Up.sub", "ir tx NEC 2 14"]
     },
